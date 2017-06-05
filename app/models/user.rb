@@ -16,6 +16,11 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #
+# Indexes
+#
+#  index_users_on_email                 (email) UNIQUE
+#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
+#
 
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
@@ -24,5 +29,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   
   has_one :profile
-  has_one :bullying, class_name: 'Bullying', foreign_key: 'bully_id'
+  has_one :bullying, through: :profile
 end

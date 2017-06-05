@@ -12,6 +12,10 @@
 #  photo_file_size    :integer
 #  photo_updated_at   :datetime
 #
+# Indexes
+#
+#  index_profiles_on_user_id  (user_id)
+#
 
 require 'test_helper'
 

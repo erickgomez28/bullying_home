@@ -1,0 +1,4 @@
+%h1 Profiles #{@profile.name}
+= image_tag @profile.photo.url(:medium)
+
+= @profile.bullying.message

@@ -17,10 +17,10 @@ ActiveRecord::Schema.define(version: 20170603220241) do
 
   create_table "bullyings", force: :cascade do |t|
     t.text "message"
-    t.bigint "bully_id"
+    t.bigint "profile_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["bully_id"], name: "index_bullyings_on_bully_id"
+    t.index ["profile_id"], name: "index_bullyings_on_profile_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -52,5 +52,6 @@ ActiveRecord::Schema.define(version: 20170603220241) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bullyings", "profiles"
   add_foreign_key "profiles", "users"
 end

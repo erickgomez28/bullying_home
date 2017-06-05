@@ -1,0 +1,14 @@
+= form_with model: @profile do |form|
+	
+	= form.fields_for :bullying, @bullying do |b|
+		= b.text_area :message, placeholder: 'Bullying...'
+	
+	%br
+	= form.text_field :name, placeholder: 'Bully...'
+	%br
+	.pic
+		.head
+			.mouth
+		.body
+		= form.file_field :photo
+	= form.submit

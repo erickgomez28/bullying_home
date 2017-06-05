@@ -1,0 +1,5 @@
+%h1 Bullyings
+%ul 
+	- @bullyings.each_with_index do |bullying, index|
+		%li
+			= link_to "Bullying #{index + 1}", bullying_path(bullying)
